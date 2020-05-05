@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+    --checked-color: green;
+    --unchecked-color: #999999;
+}
+
+.container-step-by-step{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+
+.container-step-by-step .step-by-step{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container-step-by-step .step-by-step .icon-step{
+    position: relative;
+    justify-self: center;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background-color: var(--unchecked-color);
+    align-content: center;
+    justify-content: center;
+    border: 1px solid  rgba(0,128,0,0.1);
+    box-shadow: 2px 2px 2px -2px rgba(0,0,0,0.67);
+    transition-duration: 2s;
+}
+
+.container-step-by-step .step-by-step[active="true"] .icon-step{
+    background-color: var(--checked-color);
+}
+
+.container-step-by-step .step-by-step[active="false"] .icon-step{
+    background-color: var(--unchecked-color);
+}
+
+.container-step-by-step .step-by-step[active="true"] .icon-step .check-icon{
+    display: block;
+}
+
+.container-step-by-step .step-by-step[active="false"] .check-icon{
+    display: none;
+}
+
+.container-step-by-step .step-by-step[active="false"] .icon-step .nocheck-icon{
+    display: block;
+}
+
+.container-step-by-step .step-by-step[active="true"] .nocheck-icon{
+    display: none;
+}
+
+.container-step-by-step .step-by-step .step-text-container{
+    margin-top: 10px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-step-by-step .step-by-step .icon-step img{
+    width: 100%;
+}
+
+.step-by-step-line{
+    position: relative;
+    margin-bottom: -40px;
+    height: 6px;
+    width: 100%;
+    display: flex;
+}
+
+.container-step-by-step .step-by-step[active="true"] .step-by-step-line-intern-nocheck:nth-of-type(1){
+    background-color: var(--checked-color);
+    transition-duration: 1s;
+}
+
+.container-step-by-step .step-by-step[active="true"] .step-by-step-line-intern-nocheck:nth-of-type(2){
+    background-color: var(--checked-color);
+    transition-duration: 2s;
+}
+
+.container-step-by-step .step-by-step[active="false"] .step-by-step-line-intern-nocheck{
+    background-color: var(--unchecked-color);
+}
+
+.step-by-step-line-intern-nocheck{
+    transition-duration: 2s;
+    height: 100%;
+    width: 100%;
+} 

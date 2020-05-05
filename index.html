@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Step by Step</title>
+        <link rel='stylesheet' type='text/css' href='css/step-by-step.css'/>
+    <body>
+
+        <div id="step-by-step"></div>
+
+        <script src='js/step-by-step.js'></script>
+
+        <script>
+
+            let componentDescription = {
+                checkedColor: "green",
+                uncheckedColor: "grey",
+                steps: [
+                    {description: "Seleção de rota", srcIcon: "img/room-white-18dp.svg", id: "comp1"},
+                    {description: "Descrição", srcIcon: "img/description-white-18dp.svg", id: "comp2"},
+                    {description: "Confirmação", srcIcon: "img/hourglass_full-white-18dp.svg", id: "comp3"}
+                ]
+            };
+            generateStepByStep("step-by-step", componentDescription);
+            
+
+            /*Simulação de animação*/
+            let flag = false;
+            setInterval(() => { 
+                flag = !flag;
+                let timetout = flag? 1000 : 0;
+                setTimeout(function(){ 
+                    document.getElementById('comp1').setAttribute('active',flag); 
+                }, timetout);
+                setTimeout(() => { 
+                    document.getElementById('comp2').setAttribute('active',flag);
+                }, timetout * 2);
+                    
+                setTimeout(() => { 
+                    document.getElementById('comp3').setAttribute('active',flag);
+                }, timetout * 3); 
+            }, 5000);
+
+        </script>
+    </body>
+</html>
