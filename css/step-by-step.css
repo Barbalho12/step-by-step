@@ -90,6 +90,10 @@
   width: 100%;
 }
 
+.container-step-by-step .step-by-step[active="false"] .step-by-step-line-intern-nocheck {
+  background-color: var(--unchecked-color);
+}
+
 .container-step-by-step .step-by-step[active="true"] .step-by-step-line-intern-nocheck:nth-of-type(1) {
   background-color: var(--checked-color);
   transition-duration: 1s;
@@ -98,8 +102,4 @@
 .container-step-by-step .step-by-step[active="true"] .step-by-step-line-intern-nocheck:nth-of-type(2) {
   background-color: var(--checked-color);
   transition-duration: 2s;
-}
-
-.container-step-by-step .step-by-step[active="false"] .step-by-step-line-intern-nocheck {
-  background-color: var(--unchecked-color);
 }
