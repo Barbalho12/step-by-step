@@ -1,11 +1,13 @@
 let generateStepByStep = (idContainer="step-by-step-container", {checkedColor, uncheckedColor, steps}) => {
 
-    if(checkedColor) 
-        document.documentElement.style.setProperty('--checked-color', checkedColor);
+    if(checkedColor) {
+        document.documentElement.style.setProperty("--checked-color", checkedColor);
+    }
     
-    if(uncheckedColor) 
-        document.documentElement.style.setProperty('--unchecked-color', uncheckedColor);
-    
+    if(uncheckedColor) {
+        document.documentElement.style.setProperty("--unchecked-color", uncheckedColor);
+    }
+
     let container = document.getElementById(idContainer);
 
     let containerSteps = document.createElement("div");
@@ -13,13 +15,11 @@ let generateStepByStep = (idContainer="step-by-step-container", {checkedColor, u
 
     steps.forEach( ({id, description, srcIcon}) => {
 
-        /*Create unchecked step */
         let stepByStepItem = document.createElement("div");
         stepByStepItem.id = id;
         stepByStepItem.classList.add("step-by-step");
         stepByStepItem.setAttribute("active", "false");
 
-        /*Line*/
         let stepItemLine = document.createElement("div");
         stepItemLine.classList.add("step-by-step-line");
 
