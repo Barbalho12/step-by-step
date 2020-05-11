@@ -63,4 +63,4 @@ let generateStepByStep = (idContainer="step-by-step-container", {checkedColor, u
         
     });
     container.appendChild(containerSteps);
-}
+};

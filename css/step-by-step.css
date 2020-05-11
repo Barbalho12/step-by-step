@@ -2,7 +2,7 @@
 
 :root {
   --checked-color: green;
-  --unchecked-color: #999999;
+  --unchecked-color: #999;
 }
 
 .container-step-by-step {
@@ -33,8 +33,8 @@
   background-color: var(--unchecked-color);
   align-content: center;
   justify-content: center;
-  border: 1px solid  rgba(0,128,0,0.1);
-  box-shadow: 2px 2px 2px -2px rgba(0,0,0,0.67);
+  border: 1px solid  rgba(0, 128, 0, 0.1);
+  box-shadow: 2px 2px 2px -2px rgba(0, 0, 0, 0.67);
   transition-duration: 2s;
 }
 
@@ -46,20 +46,20 @@
   background-color: var(--unchecked-color);
 }
 
-.container-step-by-step .step-by-step[active="true"] .icon-step .check-icon {
-  display: block;
-}
-
 .container-step-by-step .step-by-step[active="false"] .check-icon {
   display: none;
 }
 
-.container-step-by-step .step-by-step[active="false"] .icon-step .nocheck-icon {
+.container-step-by-step .step-by-step[active="true"] .nocheck-icon {
+  display: none;
+}
+
+.container-step-by-step .step-by-step[active="true"] .icon-step .check-icon {
   display: block;
 }
 
-.container-step-by-step .step-by-step[active="true"] .nocheck-icon {
-  display: none;
+.container-step-by-step .step-by-step[active="false"] .icon-step .nocheck-icon {
+  display: block;
 }
 
 .container-step-by-step .step-by-step .step-text-container {
@@ -84,6 +84,12 @@
   display: flex;
 }
 
+.step-by-step-line-intern-nocheck {
+  transition-duration: 2s;
+  height: 100%;
+  width: 100%;
+}
+
 .container-step-by-step .step-by-step[active="true"] .step-by-step-line-intern-nocheck:nth-of-type(1) {
   background-color: var(--checked-color);
   transition-duration: 1s;
@@ -97,9 +103,3 @@
 .container-step-by-step .step-by-step[active="false"] .step-by-step-line-intern-nocheck {
   background-color: var(--unchecked-color);
 }
-
-.step-by-step-line-intern-nocheck {
-  transition-duration: 2s;
-  height: 100%;
-  width: 100%;
-} 
